@@ -1,6 +1,6 @@
 'use client';
 
-import type { VaultDoc } from './vault-store';
+import type { DocLike as VaultDoc } from './doc-types';
 
 const WIKILINK = /\[\[([^\]|#]+)(?:[|#][^\]]*)?\]\]/g;
 const MD_LINK = /\[[^\]]*\]\(([^)\s]+)\)/g;
@@ -54,7 +54,7 @@ export function buildEdges(docs: VaultDoc[]): Array<[string, string]> {
   const seen = new Set<string>();
 
   for (const d of docs) {
-    const out = extractLinkedIds(d.content, d.id, titleIndex);
+    const out = extractLinkedIds(d.content ?? '', d.id, titleIndex);
     for (const targetId of out) {
       const a = d.id < targetId ? d.id : targetId;
       const b = d.id < targetId ? targetId : d.id;

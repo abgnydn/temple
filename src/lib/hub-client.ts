@@ -16,7 +16,8 @@ export function brainHubBase(): string {
     const q = new URLSearchParams(window.location.search).get('hub');
     if (q) return q.replace(/\/$/, '');
   }
-  return process.env.NEXT_PUBLIC_BRAIN_HUB_URL ?? DEFAULT_BASE;
+  const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env;
+  return env?.NEXT_PUBLIC_BRAIN_HUB_URL ?? DEFAULT_BASE;
 }
 
 export interface BrainHubDoc extends VaultDoc {
