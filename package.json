@@ -1,0 +1,66 @@
+{
+  "name": "temple",
+  "version": "0.1.0",
+  "description": "An embodied 3D presence layer for the web — face mesh, particle nebula, voice bridge.",
+  "license": "Apache-2.0",
+  "author": "Ahmet Barış Günaydın <hi@barisgunaydin.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abgnydn/temple.git"
+  },
+  "homepage": "https://github.com/abgnydn/temple",
+  "bugs": {
+    "url": "https://github.com/abgnydn/temple/issues"
+  },
+  "keywords": [
+    "three.js",
+    "react",
+    "react-three-fiber",
+    "3d",
+    "avatar",
+    "tts",
+    "face-mesh"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "public",
+    "README.md",
+    "LICENSE",
+    "CLAUDE.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo"
+  },
+  "peerDependencies": {
+    "@react-three/drei": ">=9.0.0",
+    "@react-three/fiber": ">=8.0.0",
+    "@react-three/postprocessing": ">=2.0.0",
+    "react": ">=18.0.0",
+    "three": ">=0.150.0"
+  },
+  "devDependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "@react-three/postprocessing": "^3.0.0",
+    "@types/react": "^19.0.0",
+    "@types/three": "^0.180.0",
+    "react": "^19.0.0",
+    "three": "^0.180.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.8.0"
+  }
+}

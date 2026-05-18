@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { fetchBrainDocs } from '@/lib/brain-hub-client';
-import type { VaultDoc } from '@/components/vault/vault-store';
-import { buildEdges } from '@/components/vault/vault-links';
+import { fetchBrainDocs } from '../lib/hub-client';
+import type { DocLike as VaultDoc } from '../lib/doc-types';
+import { buildEdges } from '../lib/doc-links';
 
 const TINT_HEX: Record<VaultDoc['tint'], string> = {
   cyan: '#67e8f9',
